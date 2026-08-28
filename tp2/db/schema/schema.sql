@@ -1,0 +1,8 @@
+CREATE TABLE tps (
+    id SERIAL PRIMARY KEY,
+    titulo VARCHAR(255) NOT NULL,
+    materia VARCHAR(255) NOT NULL,
+    fecha_entrega DATE NOT NULL,
+    estado VARCHAR(50) NOT NULL DEFAULT 'Pendiente',
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
