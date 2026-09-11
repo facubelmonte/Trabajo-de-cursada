@@ -1,6 +1,6 @@
 # Trabajo-de-cursada Gestor de Trabajos Practicos - Persistencia (TP2)
 Trabajo de cursada de Belmonte y Hobiague
-El poryecto es un sistema de gestion y seguimiento de entregas academicas para registra, consultar y administar los estados de los trabajos practicos de la carrera universitaria
+El proyecto es un sistema de gestion y seguimiento de entregas academicas para registra, consultar y administar los estados de los trabajos practicos de la carrera universitaria
 
 La tabla se compone:
 - id: Identificador unico
