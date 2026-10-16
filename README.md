@@ -21,6 +21,9 @@ make test
 
 Ejecucion de test de tp3:
 En el directorio Trabajo-de-cursada, se debe bajar la branch tp3, y acceder a ella
-Luego de acceder, se debe iniciar el servidor mediante el comando: go run main.go
-Ademas se debe levantar en otra terminal, o antes de levantar el servidor, el docker con la base de datos, mediante el comando: docker compose up -d
-Y para finalizar, se ejecuta las pruebas mmediante el comando ./request.bash
+Luego de acceder, para probar la API REST, dentro de la carpeta principal se debe ejecutar el siguiente paso a paso:
+1. Levantar la base de datos: make db-up
+2. Iniciar el servidor: go run main.go
+3. En otra terminal, ejecutar las pruebas: ./request.bash
+O de forma automática con el comando:
+make test-api
