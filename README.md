@@ -25,5 +25,6 @@ Luego de acceder, para probar la API REST, dentro de la carpeta principal se deb
 1. Levantar la base de datos: make db-up
 2. Iniciar el servidor: go run main.go
 3. En otra terminal, ejecutar las pruebas: ./request.bash
+
 O de forma automática con el comando:
 make test-api
