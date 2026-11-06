@@ -3,6 +3,7 @@ package db
 import (
 	"context"
 	"database/sql"
+	"fmt"
 	"os"
 	"testing"
 	"time"
@@ -12,8 +13,11 @@ import (
 
 // ejecuta las pruebas para cada una de las operaciones generadas
 func TestQueries_CRUD(t *testing.T) {
-	// nos conectamos a la base de datos
-	connStr := "user=user password=password dbname=tp2_test host=localhost port=5432 sslmode=disable"
+	// nos conectamos a la base de datos usando variables de entorno
+	connStr := fmt.Sprintf("user=%s password=%s dbname=%s host=localhost port=5432 sslmode=disable",
+		os.Getenv("POSTGRES_USER"),
+		os.Getenv("POSTGRES_PASSWORD"),
+		os.Getenv("POSTGRES_DB"))
 	conn, err := sql.Open("postgres", connStr)
 	if err != nil {
 		t.Fatalf("Fallo al conectar a la BD: %v", err)
@@ -29,9 +33,9 @@ func TestQueries_CRUD(t *testing.T) {
 	}
 
 	queries := New(conn)
-	
-	ctx := context.Background() 
-	
+
+	ctx := context.Background()
+
 	var createdTP Tp
 
 	// 1. CrearTP
@@ -42,7 +46,7 @@ func TestQueries_CRUD(t *testing.T) {
 			FechaEntrega: time.Date(2026, time.September, 14, 0, 0, 0, 0, time.UTC),
 			Estado:       "Pendiente",
 		}
-		
+
 		tp, err := queries.CrearTP(ctx, params)
 		if err != nil {
 			t.Fatalf("Error al crear TP: %v", err)
@@ -73,7 +77,7 @@ func TestQueries_CRUD(t *testing.T) {
 			FechaEntrega: createdTP.FechaEntrega,
 			Estado:       "Entregado",
 		}
-		
+
 		err := queries.ActualizarTP(ctx, params)
 		if err != nil {
 			t.Fatalf("Error al actualizar TP: %v", err)
