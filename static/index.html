@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestor de Trabajos Practicos</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <h1>Gestor de Trabajos Practicos</h1>
+
+    <div class="contenedor">
+        <div class="caja">
+            <h2>Nuevo TP</h2>
+            <form id="form-tp">
+                <label>Titulo:</label>
+                <input type="text" id="titulo" required />
+
+                <label>Materia:</label>
+                <input type="text" id="materia" required />
+
+                <label>Fecha de entrega:</label>
+                <input type="date" id="fecha_entrega" required />
+
+                <label>Estado:</label>
+                <select id="estado">
+                    <option value="Pendiente">Pendiente</option>
+                    <option value="En Progreso">En Progreso</option>
+                    <option value="Entregado">Entregado</option>
+                </select>
+
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+
+        <div class="caja">
+            <h2>Lista de TPs</h2>
+            <ul id="lista-tps"></ul>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

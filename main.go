@@ -28,6 +28,7 @@ func main() {
     handlers.Queries = db.New(conn)
     fmt.Println("Base de datos configurada y sqlc listo")
 
+    http.Handle("/", http.FileServer(http.Dir("./static")))
     http.HandleFunc("/tps", handlers.TpsHandler)
     http.HandleFunc("/tps/", handlers.TpHandler)
 
