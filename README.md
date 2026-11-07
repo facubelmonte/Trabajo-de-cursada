@@ -28,6 +28,8 @@ Luego de acceder, para probar la API REST, dentro de la carpeta principal se deb
 
 O de forma automática con el comando:
 make test-api
+
+
 Ejecucion de tp4:
 En la branch tp4, ejecutar el comando:
 make run
