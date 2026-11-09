@@ -1,0 +1,26 @@
+package views
+
+templ EntityForm() {
+	<section>
+		<h2>Nuevo Trabajo Practico</h2>
+		<form action="/tps" method="POST">
+			<label for="titulo">Titulo</label>
+			<input type="text" id="titulo" name="titulo" required/>
+
+			<label for="materia">Materia</label>
+			<input type="text" id="materia" name="materia" required/>
+
+			<label for="fecha_entrega">Fecha de entrega</label>
+			<input type="date" id="fecha_entrega" name="fecha_entrega" required/>
+
+			<label for="estado">Estado</label>
+			<select id="estado" name="estado">
+				<option value="Pendiente">Pendiente</option>
+				<option value="En Progreso">En Progreso</option>
+				<option value="Entregado">Entregado</option>
+			</select>
+
+			<button type="submit">Guardar</button>
+		</form>
+	</section>
+}

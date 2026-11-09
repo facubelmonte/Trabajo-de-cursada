@@ -1,4 +1,4 @@
-# Trabajo-de-cursada Gestor de Trabajos Practicos - Exponiendo la logica como API (TPe)
+# Trabajo-de-cursada Gestor de Trabajos Practicos - Renderiado del lado del sevidor con Templ
 Trabajo de cursada de Belmonte y Hobiague
 El proyecto es un sistema de gestion y seguimiento de entregas academicas para registra, consultar y administar los estados de los trabajos practicos de la carrera universitaria
 
@@ -10,25 +10,8 @@ La tabla se compone:
 - estado: Estado actual del TP
 - created-at: marca temporal de creacion con zona horaria
 
-El sistema implementa una arquitectura de persistencia basada en postgreSQL y generacion de codigo con sqlc
-SQL-Fist y Type-Safety: A diferencia de los ORMs tradicionales basados en reflexión, sqlc toma las consultas declaradas en db/queries/queries.sql y el DDL en db/schema/schema.sql, compilando interfaces de Go fuertemente tipadas y seguras en tiempo de compilación.
-Driver de Conectividad: Utiliza la librería estándar database/sql junto al driver github.com/lib/pq.
-Aislamiento en Testing: Las pruebas se ejecutan contra un contenedor efímero de PostgreSQL orquestado mediante Docker Compose, garantizando bases de datos limpias e independientes en cada corrida.
+Ejecucion de test de tp5:
+En la rama tp5, ejecutar el siguiente comando que realiza todas las tareas previas, levanta la aplicacion y al finalizar detiene y elimina contenedores y volumenes:
+make run-app
+Luego abrir: http://localhost:8080/
 
-Ejecucion de test de tp2:
-Para verificar el proyecto se debe realizar el siguiente comando dentro de la carpeta principal:
-make test
-
-Ejecucion de test de tp3:
-En el directorio Trabajo-de-cursada, se debe bajar la branch tp3, y acceder a ella
-Luego de acceder, para probar la API REST, dentro de la carpeta principal se debe ejecutar el siguiente paso a paso:
-1. Levantar la base de datos: make db-up
-2. Iniciar el servidor: go run main.go
-3. En otra terminal, ejecutar las pruebas: ./request.bash
-
-O de forma automática con el comando:
-make test-api
-Ejecucion de tp4:
-En la branch tp4, ejecutar el comando:
-make run
-Y abrir: http://localhost:8080/

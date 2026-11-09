@@ -1,0 +1,11 @@
+package views
+
+import "trabajo-cursada/db/sqlc"
+
+templ IndexPage(title string, tps []db.Tp) {
+	@Layout(title) {
+		<h1>{ title }</h1>
+		@EntityForm()
+		@EntityList(tps)
+	}
+}

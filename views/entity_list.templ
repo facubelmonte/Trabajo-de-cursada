@@ -1,0 +1,38 @@
+package views
+
+import (
+	"strconv"
+	"trabajo-cursada/db/sqlc"
+)
+
+templ EntityList(tps []db.Tp) {
+	<section>
+		<h2>Lista de Trabajos Practicos</h2>
+		if len(tps) == 0 {
+			<p>No hay trabajos practicos cargados.</p>
+		} else {
+			<table>
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Titulo</th>
+						<th>Materia</th>
+						<th>Fecha de Entrega</th>
+						<th>Estado</th>
+					</tr>
+				</thead>
+				<tbody>
+					for _, tp := range tps {
+						<tr>
+							<td>{ strconv.Itoa(int(tp.ID)) }</td>
+							<td>{ tp.Titulo }</td>
+							<td>{ tp.Materia }</td>
+							<td>{ tp.FechaEntrega.Format("2006-01-02") }</td>
+							<td>{ tp.Estado }</td>
+						</tr>
+					}
+				</tbody>
+			</table>
+		}
+	</section>
+}
